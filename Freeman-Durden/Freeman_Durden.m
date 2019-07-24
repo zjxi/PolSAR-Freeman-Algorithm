@@ -1,13 +1,13 @@
-% Freeman-Durden分类
+% Freeman-Durden Algorithm
 clc;
 clear all;
 close all;
 height=900;
 width=1024;
 
-% matlab文件操作 
+% matlab鏂囦欢鎿嶄綔 
 file_id=fopen('T3\T11.bin','r');   
-status=fseek(file_id,0,'bof');   %定位文件位置指针
+status=fseek(file_id,0,'bof');   %瀹氫綅鏂囦欢浣嶇疆鎸囬拡
 for ii=1:height
     pix=fread(file_id,width,'float32');
     T11(ii,:)=pix;
@@ -45,7 +45,7 @@ for ii=1:height
     T33(ii,:)=pix;
 end
 fclose(file_id);
-% matlab文件操作结束
+% matlab鏂囦欢鎿嶄綔缁撴潫
 
 T13=complex(T13_real,T13_image);
 Span = T11 + T22 + T33;
